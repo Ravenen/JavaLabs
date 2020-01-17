@@ -1,15 +1,12 @@
 package lab;
 
-public class Park {
-	private static final String DEFAULT_ADRESS = "Unknown";
-	private static final String DEFAULT_FULL_NAME = "Unnamed National Park";
-	
+public class ParkClass {
 	private String adress;
 	private int bikeLanesLengthInMetres;
 	private int entrenceTicketPrice;
 	private int areaInMetresSquare;
 	private String fullName;
-	public static String cityOfLocation;
+	public static int numberOfParks;
 	protected int numberOfTrees;
 	protected int numberOfPonds;
 
@@ -53,7 +50,7 @@ public class Park {
 		this.fullName = fullName;
 	}
 
-	public Park(String adress, int bikeLanesLengthInMetres, int entrenceTicketPrice, int areaInMetresSquare,
+	public ParkClass(String adress, int bikeLanesLengthInMetres, int entrenceTicketPrice, int areaInMetresSquare,
 			String fullName, int numberOfTrees, int numberOfPonds) {
 		this.adress = adress;
 		this.bikeLanesLengthInMetres = bikeLanesLengthInMetres;
@@ -62,14 +59,15 @@ public class Park {
 		this.fullName = fullName;
 		this.numberOfTrees = numberOfTrees;
 		this.numberOfPonds = numberOfPonds;
+		ParkClass.numberOfParks++;
 	}
 
-	public Park(String adress, int bikeLanesLengthInMetres, int entrenceTicketPrice, int areaInMetresSquare) {
-		this(adress, bikeLanesLengthInMetres, entrenceTicketPrice, areaInMetresSquare, DEFAULT_FULL_NAME, 0, 0);
+	public ParkClass(String adress, int bikeLanesLengthInMetres, int entrenceTicketPrice, int areaInMetresSquare) {
+		this(adress, bikeLanesLengthInMetres, entrenceTicketPrice, areaInMetresSquare, "Unnamed", 0, 0);
 	}
 
-	public Park() {
-		this(DEFAULT_ADRESS, 0, 0, 0);
+	public ParkClass() {
+		this("Unknown", 0, 0, 0, "Unnamed", 0, 0);
 	}
 
 	@Override
@@ -79,16 +77,16 @@ public class Park {
 				+ ", fullName=" + fullName + ", numberOfTrees=" + numberOfTrees + ", numberOfPonds=" + numberOfPonds
 				+ ", getAdress()=" + getAdress() + ", getBikeLanesLengthInMetres()=" + getBikeLanesLengthInMetres()
 				+ ", getEntrenceTicketPrice()=" + getEntrenceTicketPrice() + ", getAreaInMetresSquare()="
-				+ getAreaInMetresSquare() + ", getFullName()=" + getFullName() + ", printCityOfLocation()="
-				+ printCityOfLocation() + "]";
+				+ getAreaInMetresSquare() + ", getFullName()=" + getFullName() + ", printNumberOfParks()="
+				+ printNumberOfParks() + "]";
 	}
 
-	public static String printStaticCityOfLocation() {
-		return "City of location (static): " + Park.cityOfLocation;
+	public static String printStaticNumberOfParks() {
+		return "Number of parks (static): " + ParkClass.numberOfParks;
 	}
 
-	public String printCityOfLocation() {
-		return "City of location: " + Park.cityOfLocation;
+	public String printNumberOfParks() {
+		return "Number of parks: " + ParkClass.numberOfParks;
 	}
 
 	public void resetValues(String adress, int bikeLanesLengthInMetres, int entrenceTicketPrice, int areaInMetresSquare,
