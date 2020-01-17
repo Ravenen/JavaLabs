@@ -1,6 +1,11 @@
 package lab;
 
 public class Park {
+	private static final int DEFAULT_AREA_IN_METRES_SQUARE = 0;
+	private static final int DEFAULT_ENTRENCE_TICKET_PRICE = 15;
+	private static final int DEFAULT_BIKE_LANES_LENGTH_IN_METRES = 0;
+	private static final int DEFAULT_NUMBER_OF_PONDS = 1;
+	private static final int DEFAULT_NUMBER_OF_TREES = 50;
 	private static final String DEFAULT_ADRESS = "Unknown";
 	private static final String DEFAULT_FULL_NAME = "Unnamed National Park";
 	
@@ -65,11 +70,11 @@ public class Park {
 	}
 
 	public Park(String adress, int bikeLanesLengthInMetres, int entrenceTicketPrice, int areaInMetresSquare) {
-		this(adress, bikeLanesLengthInMetres, entrenceTicketPrice, areaInMetresSquare, DEFAULT_FULL_NAME, 0, 0);
+		this(adress, bikeLanesLengthInMetres, entrenceTicketPrice, areaInMetresSquare, DEFAULT_FULL_NAME, DEFAULT_NUMBER_OF_TREES, DEFAULT_NUMBER_OF_PONDS);
 	}
 
 	public Park() {
-		this(DEFAULT_ADRESS, 0, 0, 0);
+		this(DEFAULT_ADRESS, DEFAULT_BIKE_LANES_LENGTH_IN_METRES, DEFAULT_ENTRENCE_TICKET_PRICE, DEFAULT_AREA_IN_METRES_SQUARE);
 	}
 
 	@Override
