@@ -8,13 +8,13 @@ public class Park {
 	private static final int DEFAULT_NUMBER_OF_TREES = 50;
 	private static final String DEFAULT_ADRESS = "Unknown";
 	private static final String DEFAULT_FULL_NAME = "Unnamed National Park";
-	
+
 	private String adress;
 	private int bikeLanesLengthInMetres;
 	private int entrenceTicketPrice;
 	private int areaInMetresSquare;
 	private String fullName;
-	public static String cityOfLocation;
+	public static int numberOfParks;
 	protected int numberOfTrees;
 	protected int numberOfPonds;
 
@@ -67,14 +67,17 @@ public class Park {
 		this.fullName = fullName;
 		this.numberOfTrees = numberOfTrees;
 		this.numberOfPonds = numberOfPonds;
+		Park.numberOfParks++;
 	}
 
 	public Park(String adress, int bikeLanesLengthInMetres, int entrenceTicketPrice, int areaInMetresSquare) {
-		this(adress, bikeLanesLengthInMetres, entrenceTicketPrice, areaInMetresSquare, DEFAULT_FULL_NAME, DEFAULT_NUMBER_OF_TREES, DEFAULT_NUMBER_OF_PONDS);
+		this(adress, bikeLanesLengthInMetres, entrenceTicketPrice, areaInMetresSquare, DEFAULT_FULL_NAME,
+				DEFAULT_NUMBER_OF_TREES, DEFAULT_NUMBER_OF_PONDS);
 	}
 
 	public Park() {
-		this(DEFAULT_ADRESS, DEFAULT_BIKE_LANES_LENGTH_IN_METRES, DEFAULT_ENTRENCE_TICKET_PRICE, DEFAULT_AREA_IN_METRES_SQUARE);
+		this(DEFAULT_ADRESS, DEFAULT_BIKE_LANES_LENGTH_IN_METRES, DEFAULT_ENTRENCE_TICKET_PRICE,
+				DEFAULT_AREA_IN_METRES_SQUARE);
 	}
 
 	@Override
@@ -85,15 +88,15 @@ public class Park {
 				+ ", getAdress()=" + getAdress() + ", getBikeLanesLengthInMetres()=" + getBikeLanesLengthInMetres()
 				+ ", getEntrenceTicketPrice()=" + getEntrenceTicketPrice() + ", getAreaInMetresSquare()="
 				+ getAreaInMetresSquare() + ", getFullName()=" + getFullName() + ", printCityOfLocation()="
-				+ printCityOfLocation() + "]";
+				+ printNumberOfParks() + "]";
 	}
 
-	public static String printStaticCityOfLocation() {
-		return "City of location (static): " + Park.cityOfLocation;
+	public static String printStaticNumberOfParks() {
+		return "Number of parks (static): " + Park.numberOfParks;
 	}
 
-	public String printCityOfLocation() {
-		return "City of location: " + Park.cityOfLocation;
+	public String printNumberOfParks() {
+		return "Number of parks: " + Park.numberOfParks;
 	}
 
 	public void resetValues(String adress, int bikeLanesLengthInMetres, int entrenceTicketPrice, int areaInMetresSquare,
