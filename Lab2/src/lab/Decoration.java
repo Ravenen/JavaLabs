@@ -46,7 +46,7 @@ public class Decoration {
 	public static Comparator<Decoration> priceComparator = new Comparator<Decoration>() {
 		@Override
 		public int compare(Decoration firstDecoration, Decoration secondDecoration) {
-			return (secondDecoration.getPriceInHryvnas() < firstDecoration.getPriceInHryvnas() ? -1
+			return (secondDecoration.getPriceInHryvnas() > firstDecoration.getPriceInHryvnas() ? -1
 					: (secondDecoration.getPriceInHryvnas() == firstDecoration.getPriceInHryvnas() ? 0 : 1));
 		}
 	};
